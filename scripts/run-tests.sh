@@ -7,5 +7,5 @@ OUT_DIR="$ROOT_DIR/out"
 rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 
-javac -d "$OUT_DIR" $(find "$ROOT_DIR/src" -name '*.java')
-echo "Compiled classes to $OUT_DIR"
+javac -d "$OUT_DIR" $(find "$ROOT_DIR/src" "$ROOT_DIR/test" -name '*.java')
+java -cp "$OUT_DIR" photobooth.core.PhotoStripGeneratorTest
